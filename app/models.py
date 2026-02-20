@@ -10,7 +10,7 @@ class Category(models.Model):
 class News(models.Model):
     class Status(models.TextChoices):
         DRAFT = 'Df', 'Draft'
-        PUBLISHED = 'PB', 'Published'
+        PUBLISHED = 'PB', 'PUBLISHED'
 
     title = models.CharField(max_length=300)
     slug = models.SlugField(max_length=300)

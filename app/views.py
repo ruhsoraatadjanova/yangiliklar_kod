@@ -27,3 +27,39 @@ def home_page(request):
     }
 
     return render(request,'news/news_list.html',context=context)
+
+def uzb_page(request):
+    news_list = News.objects.filter(status=News.Status.Published)
+
+    context = {
+        'news_list':news_list
+    }
+
+    return render(request,'news/uzb.html',context=context)
+
+def jahon_page(request):
+    news_list = News.objects.filter(status=News.Status.Published)
+
+    context = {
+        'news_list':news_list
+    }
+
+    return render(request,'news/jahon.html',context=context)
+
+def sport_page(request):
+    news_list = News.objects.filter(status=News.Status.Published)
+
+    context = {
+        'news_list':news_list
+    }
+
+    return render(request,'news/sport.html',context=context)
+
+def fan_page(request):
+    news_list = News.objects.filter(status=News.Status.Published)
+
+    context = {
+        'news_list':news_list
+    }
+
+    return render(request,'news/fan.html',context=context)
