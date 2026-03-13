@@ -1,7 +1,8 @@
-{% load static% }
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
+<!-- CSS -->
 
 <head>
     <meta charset="utf-8">
@@ -11,7 +12,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,10 +22,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -81,7 +82,7 @@
                 </a>
             </div>
             <div class="col-lg-8 text-center text-lg-right">
-                <a href="https://htmlcodex.com"><img class="img-fluid" src="img/ads-728x90.png" alt=""></a>
+                <a href="https://htmlcodex.com"><img class="img-fluid" src="{% static 'img/ads-728x90.png' %}" alt=""></a>
             </div>
         </div>
     </div>
@@ -99,18 +100,12 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="jahon.html" class="nav-item nav-link">Category</a>
-                    <a href="single.html" class="nav-item nav-link">Single News</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="#" class="dropdown-item">Menu item 1</a>
-                            <a href="#" class="dropdown-item">Menu item 2</a>
-                            <a href="#" class="dropdown-item">Menu item 3</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                    <a href="{% url 'home' %}" class="nav-item nav-link">Bosh sahifa</a>
+                    <a href="{% url 'uzb_page' %}" class="nav-item nav-link">Uzbekiston</a>
+                    <a href="{% url 'jahon_page' %}" class="nav-item nav-link">Jahon</a>
+                    <a href="{% url 'sport_page' %}" class="nav-item nav-link">Sport</a>
+                    <a href="{% url 'fan_page' %}" class="nav-item nav-link">Fan-texnika</a>
+                    <a href="{% url 'contact_page' %}" class="nav-item nav-link">Bog'lanish</a>
                 </div>
                 <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
                     <input type="text" class="form-control border-0" placeholder="Keyword">
@@ -123,9 +118,9 @@
         </nav>
     </div>
     <!-- Navbar End -->
-
-{% block content %}
+    {% block content %}
     {% endblock %}
+
     <!-- Footer Start -->
     <div class="container-fluid bg-dark pt-5 px-sm-3 px-md-5 mt-5">
         <div class="row py-4">
@@ -197,22 +192,22 @@
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">Flickr Photos</h5>
                 <div class="row">
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="img/news-110x110-1.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="{% static 'img/news-110x110-1.jpg' %}" alt=""></a>
                     </div>
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="img/news-110x110-2.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="{% static 'img/news-110x110-2.jpg' %}" alt=""></a>
                     </div>
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="img/news-110x110-3.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="{% static 'img/news-110x110-3.jpg' %}" alt=""></a>
                     </div>
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="img/news-110x110-4.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="{% static 'img/news-110x110-4.jpg' %}" alt=""></a>
                     </div>
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="img/news-110x110-5.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="{% static 'img/news-110x110-5.jpg' %}" alt=""></a>
                     </div>
                     <div class="col-4 mb-3">
-                        <a href=""><img class="w-100" src="img/news-110x110-1.jpg" alt=""></a>
+                        <a href=""><img class="w-100" src="{% static 'img/news-110x110-1.jpg' %}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -235,11 +230,11 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>

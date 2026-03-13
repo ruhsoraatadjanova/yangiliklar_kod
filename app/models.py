@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
 
 class Category(models.Model):
@@ -7,10 +8,15 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
+class PublishedManager:
+    pass
+
+
 class News(models.Model):
     class Status(models.TextChoices):
-        DRAFT = 'Df', 'Draft'
-        PUBLISHED = 'PB', 'PUBLISHED'
+        DRAFT = 'DF', 'Draft'
+        PUBLISHED = 'PB', ('Published')
 
     title = models.CharField(max_length=300)
     slug = models.SlugField(max_length=300)
@@ -23,6 +29,12 @@ class News(models.Model):
     status = models.CharField(max_length=2,
                               choices=Status.choices,
                               default=Status.DRAFT)
+
+    objects = models.Manager()
+    published = PublishedManager()
+
+    def get_absolute_url(self):
+        return reverse("news_detail_page", args=[self.slug])
 
     class Meta:
         ordering = ['-publish_time']
