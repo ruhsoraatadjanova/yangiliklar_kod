@@ -1,7 +1,7 @@
 from django.contrib import admin
 from unicodedata import category
 
-from  .models import Category,News
+from  app.models import Category,News, Contact
 # Register your models here.
 #admin.site.register(Category)
 #admin.site.register(News)
@@ -20,3 +20,5 @@ class NewsAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['id','name']
     search_fields = ['name']
+
+admin.site.register(Contact)

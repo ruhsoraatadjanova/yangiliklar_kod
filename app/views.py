@@ -1,5 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Category,News
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import TemplateView
+
+from .forms import ContactForm
+from .models import News
 
 # Create your views here.
 
@@ -136,11 +139,22 @@ def fan_page(request):
 
     return render(request,'news/fan.html',context=context)
 
-def contact_page(request):
-    fan_news_1 = News.objects.all().filter(category__name="Fan-texnika").order_by('-publish_time')[0]
+class ContactPageView(TemplateView):
+    template_name = 'news/contact.html'
 
-    context = {
-        'fan_news_1':fan_news_1,
-    }
+    def get(self,request, *args, **kwargs):
+        form = ContactForm()
+        context = {
+            'form': form
+        }
+        return render(request, "news/contact.html", context)
 
-    return render(request,'news/contact.html',context=context)
+    def post(self, request, *args, **kwargs):
+        form = ContactForm(request.POST)
+        if request.method == "POST" and form.is_valid():
+            form.save()
+            return redirect('home')
+        context = {
+            'form': form
+        }
+        return render(request, "news/contact.html", context)
