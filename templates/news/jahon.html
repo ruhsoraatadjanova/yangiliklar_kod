@@ -24,7 +24,7 @@
                                             href="">Jahon</a>
                                         <a class="text-body" href=""><small>{{ jahon_news_1.publish_time }}</small></a>
                                     </div>
-                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">{{ jahon_news_1.title | truncatewords:5 }}</a>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="{{ jahon_news_1.get_absolute_url }}">{{ jahon_news_1.title | truncatewords:5 }}</a>
                                     <p class="m-0">{{ jahon_news_1.body | truncatewords:15 }}</p>
                                 </div>
                                 <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
@@ -48,7 +48,7 @@
                                             href="">Jahon</a>
                                         <a class="text-body" href=""><small>{{ jahon_news_2.publish_time }}</small></a>
                                     </div>
-                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">{{ jahon_news_2.title | truncatewords:5 }}</a>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="{{ jahon_news_2.get_absolute_url }}">{{ jahon_news_2.title | truncatewords:5 }}</a>
                                     <p class="m-0">{{ jahon_news_1.body | truncatewords:15 }}</p>
                                 </div>
                                 <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
@@ -75,7 +75,7 @@
                                             href="">Jahon</a>
                                         <a class="text-body" href=""><small>{{ jahon_news_3.publish_time }}</small></a>
                                     </div>
-                                    <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="">{{ jahon_news_3.title | truncatewords:5 }}</a>
+                                    <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="{{ jahon_news_3.get_absolute_url }}">{{ jahon_news_3.title | truncatewords:5 }}</a>
                                      <p class="m-0">{{ jahon_news_3.body | truncatewords:15 }}</p>
                                 </div>
                                 <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
@@ -99,7 +99,7 @@
                                             href="">Jahon</a>
                                         <a class="text-body" href=""><small>{{ jahon_news_4.publish_time }}</small></a>
                                     </div>
-                                    <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="">{{ jahon_news_4.title | truncatewords:5 }}</a>
+                                    <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="{{ jahon_news_4.get_absolute_url }}">{{ jahon_news_4.title | truncatewords:5 }}</a>
                                      <p class="m-0">{{ jahon_news_4.body | truncatewords:15 }}</p>
                                 </div>
                                 <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
